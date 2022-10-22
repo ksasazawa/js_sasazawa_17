@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グリンピース</title>
+    <meta property="og:image" content="img/green_peace.jpeg">
+    <link rel="apple-touch-icon" href="img/green_peace.jpeg">
+    <link rel="shortcut icon" href="img/green_peace.jpeg">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/green_peace.js"></script>
+    <script>
+        window.addEventListener("load", init);
+    </script>
+</head>
+<body>
+    <header>
+        <section>
+            <div class="green_peace_img_area">
+                <img class="green_peace_img" src="img/green_peace.jpeg" alt="グリンピース">
+                <h1 class="green_peace_text">グリンピース</h1>
+            </div>
+        </section> 
+    </header>
+
+    <main>
+        <!-- バトル画面 -->
+        <section>
+            <ul class="list">
+                <!-- 自分のアイコン -->
+                <li class="item">
+                    <p class="item_text">クウガ</p>
+                    <img id="your_photo" src="img/クウガ.jpeg" alt="クウガ" class="item_img">
+                    <p id="your_rinrin" class="rinrin"></p>
+                </li>
+                <!-- 自分の手 -->
+                <li class="item">
+                    <p class="item_text">自分の手</p>
+                    <img id="gu" class = "your_hand" src="img/グー.jpg" alt="グー" value="gu" onclick="janken(this.id)">
+                    <img id="cho" class = "your_hand" src="img/チョキ.jpg" alt="チョキ" value="cho" onclick="janken(this.id)">
+                    <img id="pa" class = "your_hand" src="img/パー.jpg" alt="パー" value="pa" onclick="janken(this.id)">
+                </li>
+                <!-- 相手の手 -->
+                <li class="item">
+                    <p class="item_text">相手の手</p>
+                    <p class="enemy_hand"></p>
+                </li>
+                <!-- 相手のアイコン -->
+                <li class="item">
+                    <p class="item_text" id="enemy_name"></p>
+                    <img id="enemy_photo" class="item_img">
+                    <p id="enemy_rinrin" class="rinrin"></p>
+                </li>
+        </section>
+        <!-- 勝敗 -->
+        <section>
+            <p id="echo"></p>
+            <button id="donn" class="hidden">Donn</button>
+        </section>
+    </main>
+
+    <footer></footer>
+</body>
+</html>

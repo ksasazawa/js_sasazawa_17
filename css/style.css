@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+/* 全体 */
+html{
+    font-size: 62.5%;
+    color: #222222;
+    background-size:  cover; 
+    background-color: #f0f9e0;
+}
+body{
+    max-width: 1200px;
+    text-align: center;
+    margin: auto;
+    font-size: 1.6rem;
+    font-family: 'YuGothic', 'Yu Gothic', 'ヒラギノ角ゴシック', 'Hiragino Sans', 'メイリオ', 'Meiryo', 'Osaka', sans-serif;
+}
+
+/* header */
+.green_peace_img_area{
+    position: relative;
+}
+.green_peace_img{
+    width: 100%;
+}
+.green_peace_text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -100%, 0);
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ffeeee;
+}
+
+/* ホーム画面 */
+.selection{
+    font-size: 3rem;
+    margin: 80px 0 0;
+}
+.enemy_list{
+    display: flex;
+    margin: 50px 0 0;
+}
+.enemy{
+    width: 25%;
+    font-size: 2rem;
+}
+.btn{
+    margin: 30px;
+    width: 100px;
+    height: 50px;
+    background-color: #009977;
+    color: #ffeeee;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: all 0.05s ease 0s;
+}
+.btn:hover {
+	transform: translateY(0.5000em);
+}
+
+/* バトル画面 */
+.list{
+    display: flex;
+}
+.item{
+    width: 25%;
+    margin: 60px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+}
+.item_text{
+    font-size: 2rem;
+}
+.item_img{
+    margin: 30px 0 0;
+}
+.your_hand{
+    width: 150px;
+    height: 150px;
+    margin: 40px auto 0;
+    text-align: center;
+    opacity: 0.3;
+    transition: all 0.05s ease 0s;
+    /* position: fixed;
+    left: 395px; */
+}
+.your_hand:hover {
+    opacity: 0.9;
+    cursor: pointer;
+	transform: translateY(0.5000em);
+}
+.enemy_hand{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    margin: auto;
+}
+#enemy_hand{
+    width: 200px;
+    height: 400px;
+}
+.rinrin{
+    position: absolute;
+    top: 0%;
+    right: -10%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: aquamarine;
+    border-radius: 10%;
+    transform: rotate(20deg);
+}
+#echo{
+    font-size: 5rem;
+    font-weight: bold;
+    color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -100%, 0);
+}
+#donn{
+    display: none;
+    width: 150px;
+    height: 60px;
+    border-radius: 10%;
+    font-size: 4rem;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate3d(-50%, -100%, 0);
+}
+#donn:hover {
+    cursor: pointer;
+}
