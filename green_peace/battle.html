@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グリンピース</title>
+    <meta property="og:image" content="img/green_peace_icon.png">
+    <link rel="apple-touch-icon" href="img/green_peace_icon.png">
+    <link rel="shortcut icon" href="img/green_peace_icon.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/battle.css">
+    <script src="js/battle.js"></script>
+</head>
+<body>
+  <ul class="list">
+    <li class="item">
+      <p class="item_text">クウガ</p>
+      <!-- <div class="balloon3-right-btm">POINT</div> -->
+      <img id="your_photo" src="img/クウガ.jpeg" alt="クウガ" class="item_img">
+    </li>
+    <li class="item">
+      <div class="janken" id="js-janken">
+          <div class="jankenDisplay">
+            <p class="jankenDisplay_message" id="js-result"><span>グリンピース</span></p>
+            <div class="jankenDisplay_inner">
+              <div class="jankenDisplay_hand" id="js-enemyHand"></div>
+            </div>
+          </div>
+          <div class="jankenBtns">
+            <p class="jankenPlay">
+              <button class="janken_btn" id="js-btnPlay" type="button"><span>スタート</span></button>
+            </p>
+            <div class="jankenHands">
+              <div class="jankenHandsItem is-goo">
+                <p class="jankenHandsItem_btn">
+                  <button class="janken_btn js-myHand" type="button" value="0"></button>
+                </p>
+                <p class="jankenHandsItem_label">グー</p>
+              </div>
+              <div class="jankenHandsItem is-choki">
+                <p class="jankenHandsItem_btn">
+                  <button class="janken_btn js-myHand" type="button" value="1"></button>
+                </p>
+                <p class="jankenHandsItem_label">チョキ</p>
+              </div>
+              <div class="jankenHandsItem is-pa">
+                <p class="jankenHandsItem_btn">
+                  <button class="janken_btn js-myHand" type="button" value="2"></button>
+                </p>
+                <p class="jankenHandsItem_label">パー</p>
+              </div>
+            </div>
+          </div>
+          <p class="janken_message" id="js-message"></p>
+          <div class="donBtns">
+            <p class="donPlay">
+              <button class="don_btn" id="don" type="button"><span>ドン！</span></button>
+            </p>
+          </div>
+        </div>
+    </li>
+    <li class="item">
+      <p class="item_text" id="enemy_name"></p>
+      <img id="enemy_photo" class="item_img">
+    </li>
+  </ul>
+</body>
+</html>

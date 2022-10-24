@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グリンピース</title>
+    <meta property="og:image" content="img/green_peace_icon.png">
+    <link rel="apple-touch-icon" href="img/green_peace_icon.png">
+    <link rel="shortcut icon" href="img/green_peace_icon.png">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/home.js"></script>
+</head>
+<body>
+    <header>
+        <section>
+            <div class="green_peace_img_area">
+                <img class="green_peace_img" src="img/green_peace.jpeg" alt="グリンピース">
+                <h1 class="green_peace_text">グリンピース</h1>
+            </div>
+        </section> 
+    </header>
+
+    <main> 
+        <section>
+            <h2 class="selection">対戦相手を選択してください</h2>
+            <!-- 敵選択 -->
+            <form action="#" action="POST" name="enemy_selection">
+                <ul class="enemy_list">
+                    <li class="enemy">
+                        <p><input type="radio" name="kind" value="zu">Lv.1:ズ・ゴオマ・グ</p>
+                        <img src="img/ズ・ゴオマ・グ.jpeg" alt="ズ・ゴオマ・グ">
+                    </li>
+                    <li class="enemy">
+                        <p><input type="radio" name="kind" value="me">Lv.2:メ・ガルメ・レ</p>
+                        <img src="img/メ・ガルメ・レ.jpeg" alt="メ・ガルメ・レ">
+                    </li>
+                    <li class="enemy">
+                        <p><input type="radio" name="kind" value="go">Lv.3:ゴ・ガドル・バ</p>
+                        <img src="img/ゴ・ガドル・バ.jpeg" alt="ゴ・ガドル・バ">
+                    </li>
+                    <li class="enemy">
+                        <p><input type="radio" name="kind" value="n">Final:ン・ダグバ・ゼバ</p>
+                        <img src="img/ン・ダグバ・ゼバ.jpeg" alt="ン・ダグバ・ゼバ">
+                    </li>
+                </ul>
+                <input type="button" onclick="battle()" value="Battle!!" class="btn">
+            </form>
+    </main>
+
+    <footer></footer>
+</body>
+</html>
