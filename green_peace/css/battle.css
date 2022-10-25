@@ -57,7 +57,84 @@ button {
   height: 600px;
   text-align: center;
   border: 5px solid black;
+}
+.your_img_relative{
   position: relative;
+}
+.balloon3-left-btm{
+  display: none;
+  position: relative;
+  position: absolute;
+  top: -5%;
+  right: -50%;
+  z-index: 1000000;
+  width: 250px;
+  height: 100px;
+  padding: 30px 30px;
+  text-align: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #a58eff;
+  border-radius: 50%;
+  /* 
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 15px 1.5em 0;
+  line-height: 90px;
+  box-sizing: border-box; */
+}
+.balloon3-left-btm:before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 20px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 50px solid #a58eff;
+  z-index: 0;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.enemy_img_relative{
+  position: relative;
+}
+.balloon3-right-btm{
+  display: none;
+  position: relative;
+  position: absolute;
+  top: -5%;
+  left: -50%;
+  z-index: 1000000;
+  width: 250px;
+  height: 100px;
+  padding: 30px 30px;
+  text-align: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #a58eff;
+  border-radius: 50%;
+  /* 
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 15px 1.5em 0;
+  line-height: 90px;
+  box-sizing: border-box; */
+}
+.balloon3-right-btm:before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 20px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 50px solid #a58eff;
+  z-index: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 /* ディスプレイ
