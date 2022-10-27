@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       myHandType: 0,
       enemyHandType: 0,
       messageArray: ['グリンピー、、、', 'あいこで', 'ス！'],
-      shoutArray: ['グリン、グリン','チョリン、チョリン','パリン、パリン','ドン'],
+      shoutArray: ['グリン、グリン！','チョリン、チョリン！','パリン、パリン！','ドン！'],
       resultArray: ['勝ち', '負け'],
       cnt: 0, // 勝敗がついた回数
       flg: false,
