@@ -136,6 +136,7 @@ function janken(your_hand){
             });
         };
     }
+    
     // 勝敗がついた時
     else{
         cnt += 1;
