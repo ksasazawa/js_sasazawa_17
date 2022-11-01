@@ -9,7 +9,7 @@ function battle(){
         }
     }
     window.location.href = "battle.html" + "?" + enemy ;
-}
+};
 
 let seconds = 0;
 // 【バトル画面】キャラ設定

@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
       param: location.search,
       x: Math.ceil(Math.random()*( 90 - 10 )) + 10,
       y: Math.ceil(Math.random()*( 90 - 10 )) + 10,
+      yourLife: 100,
+      enemyLife: 100,
     },
 
     // 初めに実行される関数
@@ -59,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
           document.querySelector("body").style.backgroundImage = `url("./img/snow.jpeg")`;
           data.seconds = 1;
         };
+      self.savePoint("kuga", data.yourLife) // クウガのライフを初期化
+      self.savePoint(data.param, data.enemyLife) // 敵のライフを初期化
       self.clickPlay()
       self.clickMyHand()
     },
@@ -178,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
           if (el.janken.classList.contains('is-aiko')) {
               el.janken.classList.remove('is-aiko')
             }
-          console.log(data.cnt)
           el.enemyShout.style.display = "block"
           el.enemyShout.innerHTML = data.shoutArray[data.enemyHandType]
           self.speechPlay(data.enemyHandType, result)
@@ -192,8 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
           if (el.janken.classList.contains('is-aiko')) {
               el.janken.classList.remove('is-aiko')
             }
-          console.log(data.cnt)
-          console.log(`自分の手は${data.myHandType}`)
           el.yourShout.style.display = "block"
           el.yourShout.innerHTML = data.shoutArray[data.myHandType]
           self.speechPlay(data.myHandType, result)
@@ -203,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
           
       }
       // const result = (data.myHandType - Math.abs(data.enemyHandType) + 3) % 3
-      // console.log(`${result}=(${data.myHandType} - ${Math.abs(data.enemyHandType)} + 3) % 3}`)
       // switch (result) {
       //   case 0:
       //     el.janken.classList.add('is-aiko')
@@ -281,12 +281,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // ドンの表示
         el.don.style.display = "block";
         // ドンがクリックされたらフラグをtrueにする。
-        el.don.addEventListener('click', function(){
+        $("#don").off('click')
+        $("#don").on('click', function(){
           data.flg = true
-          console.log(`押されました。${data.flg}`)
+          console.log("ドンが押されました");
           self.speechPlayDon(2)
           el.don.style.display = "none";
         })
+        // el.don.addEventListener('click', function(){
+        //   data.flg = true
+        //   console.log("ドンが押されました");
+        //   self.speechPlayDon(2)
+        //   el.don.style.display = "none";
+        // })
         // ドンを消す
         await new Promise((resolve) => {
           setTimeout(() => {
@@ -299,12 +306,25 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         // フラグ値によって勝敗の決定
         if(data.flg==true){
-          console.log("judgeで勝ち")
           self.showResult(data.resultArray[0]) // 勝ち
+          data.enemyLife -= 50
+          document.querySelector("#enemy-life-bar").style.width = `${data.enemyLife}%`
+          if(data.enemyLife <= 0){
+            document.querySelector("#fullOverlay").style.display = "block"
+            document.querySelector("#judgement_text").style.display = "block"
+            document.querySelector("#judgement_text").innerHTML = "勝利"
+          }   
           el.result.classList.add('is-win')
         }else{
-          console.log("judgeで負け")
           self.showResult(data.resultArray[1]) // 負け
+          data.yourLife -= 50
+          document.querySelector("#your-life-bar").style.width = `${data.yourLife}%`
+          if(data.yourLife <= 0){
+            document.querySelector("#fullOverlay").style.display = "block"
+            document.querySelector("#judgement_text").style.display = "block"
+            document.querySelector("#judgement_text").innerHTML = "敗北"
+            
+          }   
         }
       }
       Myasync();
@@ -315,7 +335,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const self = this
       const data = self.data
       let speech_play_option = new SpeechSynthesisUtterance();
-      console.log(`音声関数内、${win_hand}`)
       if(win_hand==0){
         speech_play_option.text = data.shoutArray[0]
       }else if(win_hand==1){
@@ -350,7 +369,13 @@ document.addEventListener('DOMContentLoaded', () => {
       speech_play_option.pitch = 1;
       speech_play_option.rate = 1.5;
       speechSynthesis.speak(speech_play_option);
-      console.log(`勝ちです！！！コンクルージョンは${conclusion}`)
+    },
+
+    savePoint(key, point){
+      const self = this // この関数があるオブジェクトを指す。
+      const el = self.el
+      const data = self.data
+      localStorage.setItem(key, point);
     },
 
   }.init())

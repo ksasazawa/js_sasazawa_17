@@ -10,12 +10,19 @@
     <link rel="shortcut icon" href="img/green_peace_icon.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/battle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/battle.js"></script>
 </head>
 <body>
+  <div id="fullOverlay"></div>
+  <div id="judgement_text"></div>
   <ul class="list">
     <li class="item">
       <p class="item_text">クウガ</p>
+      <div id="your-life-frame">
+        <div id="your-life-bar"></div>
+        <div id="your-life-mark"></div>
+      </div>
       <div class="your_img_relative">
         <img id="your_photo" src="img/クウガ.jpeg" alt="クウガ" class="item_img">
         <div class="balloon3-left-btm">
@@ -66,6 +73,10 @@
     </li>
     <li class="item">
       <p class="item_text" id="enemy_name"></p>
+      <div id="enemy-life-frame">
+        <div id="enemy-life-bar"></div>
+        <div id="enemy-life-mark"></div>
+      </div>
       <div class="enemy_img_relative">
         <img id="enemy_photo" class="item_img">
         <div class="balloon3-right-btm">
